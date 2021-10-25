@@ -1,0 +1,24 @@
+{
+  "name": "dev-serve",
+  "version": "1.0.0",
+  "description": "Dev Serve",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alchemy-works/dev-serve.git"
+  },
+  "keywords": [],
+  "author": "cbdyzj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alchemy-works/dev-serve/issues"
+  },
+  "homepage": "https://github.com/alchemy-works/dev-serve#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.1"
+  }
+}
