@@ -6,12 +6,15 @@ const app = express()
 
 app.use(express.static(join(__dirname, './static')))
 
-app.get('/api/*', (() => {
-    const proxy = createProxyServer({ target: 'http://localhost:8080/' })
+app.all('/api/*', (() => {
+    const proxy = createProxyServer({
+        changeOrigin: true,
+        target: 'http://localhost:8080/',
+    })
 
     proxy.on('error', (err, req, res) => {
         res.writeHead(500, { 'Content-Type': 'text/plain' })
-        res.end(err.toString());
+        res.end(err.toString())
     })
 
     return (req, res) => proxy.web(req, res)
